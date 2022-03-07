@@ -50,4 +50,12 @@ git rm -r --cached .
 
 https://stackoverflow.com/questions/40975751/copy-changes-from-one-branch-to-another
 
-# 
+print("Hey programmer ===> ")
+print("set DJANGO_ENV='mysite.settings.dev' or 'mysite.settings.prod'")
+print("once at the beginning of your session.")
+WARNING => There cannot be spaces around the '='
+
+Add the following code to asgi.py, wsgi.py, and manage.py.
+Setting the environment variable sets working in development or production mode.
+django_env=os.environ['DJANGO_ENV']
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', django_env)
