@@ -11,7 +11,12 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-django_env = os.environ['DJANGO_ENV']
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', django_env)
+import environ
+env = environ.Env()
+environ.Env.read_env('mysite/.env')
+myvar = env('MYVAR')
+print("MYVAR wsgi.py ==============> ", myvar)
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', myvar)
 
 application = get_asgi_application()

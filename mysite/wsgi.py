@@ -1,17 +1,12 @@
-"""
-WSGI config for mysite project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
-"""
-
 import os
-
 from django.core.wsgi import get_wsgi_application
 
-django_env = os.environ['DJANGO_ENV']
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', django_env)
+import environ
+env = environ.Env()
+environ.Env.read_env('mysite/.env')
+myvar = env('MYVAR')
+print("MYVAR wsgi.py ==============> ", myvar)
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', myvar)
 
 application = get_wsgi_application()

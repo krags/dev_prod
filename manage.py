@@ -3,17 +3,15 @@
 import os
 import sys
 
-print('\r\n')
-print("Hey programmer ===> ")
-print("set DJANGO_ENV='mysite.settings.dev' or 'mysite.settings.prod'")
-print("once at the beginning of your session.")
-print('\r\n')
+import environ
+env = environ.Env()
+environ.Env.read_env('mysite/.env')
+myvar = env('MYVAR')
+print("MYVAR manage.py ==============> ", myvar)
 
 def main():
     """Run administrative tasks."""
-    django_env = os.environ['DJANGO_ENV']
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', django_env)
-
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', myvar)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

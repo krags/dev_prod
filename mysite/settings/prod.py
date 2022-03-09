@@ -3,7 +3,6 @@ import django_on_heroku
 
 from .base import *
 
-
 SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = False

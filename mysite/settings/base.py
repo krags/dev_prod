@@ -20,6 +20,7 @@ from pathlib import Path
 #BASE_DIR = Path(__file__).resolve().parent.parent.parent
 #BASE_DIR = os.getcwd()
 BASE_DIR = Path(__file__).resolve().parent.parent
+print("BASE_DIR from base.py ++++++++++++++>", BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production

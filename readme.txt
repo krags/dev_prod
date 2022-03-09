@@ -51,7 +51,8 @@ git rm -r --cached .
 https://stackoverflow.com/questions/40975751/copy-changes-from-one-branch-to-another
 
 print("Hey programmer ===> ")
-print("set DJANGO_ENV='mysite.settings.dev' or 'mysite.settings.prod'")
+print("set DJANGO_ENV='mysite.settings.dev' for dev work.")
+print("set DJANGO_ENV='mysite.settings.prod' for production work.")
 print("once at the beginning of your session.")
 WARNING => There cannot be spaces around the '='
 
