@@ -60,3 +60,13 @@ Add the following code to asgi.py, wsgi.py, and manage.py.
 Setting the environment variable sets working in development or production mode.
 django_env=os.environ['DJANGO_ENV']
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', django_env)
+
+Two scoops of django
+And how to setup the settings files.
+https://stackoverflow.com/questions/1626326/how-to-manage-local-vs-production-settings-in-django
+
+# Running django for local development
+$ ./manage.py runserver 0:8000 --settings=project.settings.local
+
+# Running django shell on the production site
+$ ./manage.py shell --settings=project.settings.production
